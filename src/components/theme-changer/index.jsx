@@ -19,7 +19,7 @@ const ThemeChanger = ({ profile, setProfile }) => {
         <div className="flex-0">
           <Button variant="outlined" onClick={() => setProfile(profile === "chef"? "ceo" : "chef")}>
               <img
-                src={!isChef? "/chef.png" : "/ceo.png"}
+                src={!isChef? "chef.png" : "ceo.png"}
                 style={{ height: 25, width: 25, marginRight: 10 }}
               />
               <Typography sx={{ marginRight: 1 }}>

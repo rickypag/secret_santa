@@ -7,7 +7,7 @@ const AvatarCard = ({ profile }) => {
       <Stack spacing={2}>
         <Box sx={{ justifyContent: "center", display: "flex" }}>
           <img
-            src={profile === "chef"? "/profile-picture-chef.jpg" : "/profile-picture.jpeg"}
+            src={profile === "chef"? "profile-picture-chef.jpg" : "profile-picture.jpeg"}
             style={{ height: 100, width: 100, borderRadius: 100, borderColor: "#aaaaaa", borderWidth: 3 }}
           />
         </Box>
