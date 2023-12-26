@@ -1,6 +1,7 @@
 import { skeleton } from '../../helpers/utils';
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Card } from '@mui/material';
 
 const ListItem = ({ time, degree, institution }) => (
   <li className="mb-5 ml-4">
@@ -14,68 +15,48 @@ const ListItem = ({ time, degree, institution }) => (
   </li>
 );
 
-const Education = ({ loading, education }) => {
-  const renderSkeleton = () => {
-    let array = [];
-    for (let index = 0; index < 2; index++) {
-      array.push(
-        <ListItem
-          key={index}
-          time={skeleton({
-            width: 'w-5/12',
-            height: 'h-4',
-          })}
-          degree={skeleton({
-            width: 'w-6/12',
-            height: 'h-4',
-            className: 'my-1.5',
-          })}
-          institution={skeleton({ width: 'w-6/12', height: 'h-3' })}
-        />
-      );
+const Education = () => {
+  const education = [
+    {
+        "institution": "Institution Name",
+        "degree": "Degree",
+        "from": "2015",
+        "to": "2019"
+    },
+    {
+        "institution": "Institution Name",
+        "degree": "Degree",
+        "from": "2012",
+        "to": "2014"
     }
-
-    return array;
-  };
+]
 
   return (
-    <>
-      {education?.length !== 0 && (
+    <Card sx={{ maxWidth: "sm", width: "100%" }}>
         <div className="card shadow-lg compact bg-base-100">
           <div className="card-body">
             <div className="mx-3">
               <h5 className="card-title">
-                {loading ? (
-                  skeleton({ width: 'w-32', height: 'h-8' })
-                ) : (
-                  <span className="text-base-content opacity-70">
+                <span className="text-base-content opacity-70">
                     Education
-                  </span>
-                )}
+                </span>
               </h5>
             </div>
             <div className="text-base-content text-opacity-60">
-              <ol className="relative border-l border-base-300 border-opacity-30 my-2 mx-4">
-                {loading ? (
-                  renderSkeleton()
-                ) : (
-                  <Fragment>
-                    {education.map((item, index) => (
-                      <ListItem
-                        key={index}
-                        time={`${item.from} - ${item.to}`}
-                        degree={item.degree}
-                        institution={item.institution}
-                      />
-                    ))}
-                  </Fragment>
-                )}
+              <ol className="relative border-l border-base-300 border-opacity-30 my-2 mx-4">  
+                {education.map((item, index) => (
+                  <ListItem
+                    key={index}
+                    time={`${item.from} - ${item.to}`}
+                    degree={item.degree}
+                    institution={item.institution}
+                  />
+                ))}
               </ol>
             </div>
           </div>
         </div>
-      )}
-    </>
+      </Card>
   );
 };
 

@@ -11,7 +11,7 @@ export default defineConfig({
 
   // If you are deploying to https://<USERNAME>.github.io/<REPO_NAME>/, for example your repository is at https://github.com/<USERNAME>/<REPO_NAME>, then set base to '/<REPO_NAME>/'.
 
-  base: '/gitprofile/',
+  base: '/naoto.anzellotti',
   plugins: [
     react(),
     VitePWA({
@@ -19,14 +19,14 @@ export default defineConfig({
       workbox: {
         navigateFallback: undefined,
       },
-      includeAssets: ['logo.png'],
+      includeAssets: ['profile-picture.png'],
       manifest: {
-        name: 'Portfolio',
-        short_name: 'Portfolio',
-        description: 'Personal Portfolio',
+        name: 'CEO',
+        short_name: 'CEO',
+        description: 'Chief Executive Officer',
         icons: [
           {
-            src: 'logo.png',
+            src: 'profile-picture.png',
             sizes: '64x64 32x32 24x24 16x16 192x192 512x512',
             type: 'image/png',
           },
