@@ -16,7 +16,7 @@ const GitProfile = ({ config }) => {
 
   return (
     <HelmetProvider>
-      <Stack sx={{ background: `url(${profile}${"-background.jpg"})`, backgroundSize: "cover", padding: 3, alignItems: "center" }} spacing={1}>
+      <Stack sx={{ backgroundImage: `url(${profile}${"-background.jpg"})`, backgroundSize: "cover", padding: 3, alignItems: "center" }} spacing={1}>
         <ThemeChanger
           profile={profile}
           setProfile={setProfile}
